@@ -15,12 +15,12 @@ import {
   Address,
 } from "./RestaurantInfoStyle.js";
 
-export const RestaurantInfo = ({ restaurant = {} }) => {
+export const RestaurantInfo = ({ restaurant }) => {
   const {
     name = "Some Restaurant",
     address = "100 street from someWhere",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photo = [
+    photos = [
       "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
     ],
     isOpenNow = true,
@@ -32,7 +32,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
 
   return (
     <RestaurantCard elevation={5}>
-      <RestaurantCardCover key={name} source={{ uri: photo[0] }} />
+      <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
