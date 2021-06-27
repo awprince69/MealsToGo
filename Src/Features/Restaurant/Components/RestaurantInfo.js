@@ -23,6 +23,7 @@ export const RestaurantInfo = ({ restaurant }) => {
     photos = [
       "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
     ],
+    placeId,
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
@@ -37,8 +38,13 @@ export const RestaurantInfo = ({ restaurant }) => {
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} width={20} height={20} />
+            {ratingArray.map((_, i) => (
+              <SvgXml
+                key={`star-${placeId}-${i}`}
+                xml={star}
+                width={20}
+                height={20}
+              />
             ))}
           </Rating>
           <SectionEnd>
