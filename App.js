@@ -7,10 +7,8 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { theme } from "./Src/Infrastructure/Theme";
-import { RestaurantsContextProvider } from "./Src/Services/Restauresnts/RestaurentsContext";
-import { LocationContextProvider } from "./Src/Services/Location/Location.context";
+
 import { Navigation } from "./Src/Infrastructure/navigation";
-import { FavoritesContextProvider } from "./Src/Services/Favorites/FavoritesContext";
 import firebase from "firebase";
 import { firebaseConfig } from "./Src/Services/Firebase/FirebaseConfig";
 import { AuthenticationContextProvider } from "./Src/Services/Authentication/AuthenticationContext";
@@ -34,13 +32,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
-          <FavoritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <Navigation />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavoritesContextProvider>
+          <Navigation />
         </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
