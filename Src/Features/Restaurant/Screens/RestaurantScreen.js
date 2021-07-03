@@ -12,6 +12,7 @@ import { RestaurantInfo } from "../Components/RestaurantInfo";
 import { FavoriteBar } from "../../../Components/Favorite/FavoritesBar";
 import { FavoritesContext } from "../../../Services/Favorites/FavoritesContext";
 import { RestaurantList } from "../Components/RestaurantListStyles";
+import { FadeInView } from "../../../Components/Animations/FadeAnimation";
 
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
@@ -52,7 +53,9 @@ export const RestaurantScreen = ({ navigation }) => {
               }
             >
               <Spacer position="bottom" size="large">
-                <RestaurantInfo restaurant={item} />
+                <FadeInView>
+                  <RestaurantInfo restaurant={item} />
+                </FadeInView>
               </Spacer>
             </TouchableOpacity>
           );
